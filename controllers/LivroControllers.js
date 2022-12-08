@@ -11,12 +11,16 @@ class LivroController {
         })
     }
 
-    // static findById = (req, res) =>{
-    //     const id = req.params.id
-    //     livros.findById((err, livros)=>{
-    //         res.status(200).json(livros)
-    //     })
-    // }
+    static findById = (req, res) =>{
+        const id = req.params.id
+        livros.findById(id, (err, livros)=>{
+            if (err){
+                res.status(404).send({message: 'Livro não encontrado', error: err.message})
+            } else {
+                res.status(200).json(livros)
+            }
+        })
+    }
 }
 
 module.exports = LivroController;

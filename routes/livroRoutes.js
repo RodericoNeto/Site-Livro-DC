@@ -7,9 +7,9 @@ const express = require('express')
 const LivroController = require('../controllers/LivroControllers')
 const routes = express.Router()
 
-routes
+// routes
 .get('/books', LivroController.findAll)
-// .get('/book/:id', LivroController.findById)
+.get('/book/:id', LivroController.findById)
 
 
 module.exports = routes;
