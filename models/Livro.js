@@ -6,10 +6,11 @@ const mongoose = require('mongoose');
 // embaixo seria o modelo(schema) dos dados(entidade) que tem que vir lá do mongodb
 
 const livroSchema = new mongoose.Schema({
-    _id: {type: String},
-    titulo: {type: String, require: true},
+    id: {type: String},
+    title: {type: String, require: true},
     autor: {type: String, require: true},
-    editora: {type: String, require: true}
+    editora: {type: String, require: true},
+    numeroPaginas: {type: Number}
 });
 
 const livros = mongoose.model('livro', livroSchema);

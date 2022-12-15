@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 //const url = 'mongodb+srv://dcfs01:dcfs01@cluster0.gplbvjr.mongodb.net/LivrosNovo'
 
-const url = 'mongodb+srv://dcfs01:dcfs01@cluster0.gplbvjr.mongodb.net/node_mongo'
+const url = 'mongodb+srv://dev:326691@aulasdigitalcollege.yvtblox.mongodb.net/svl'
 
 /* const connectionParams={
     useNewUrlParser: true,

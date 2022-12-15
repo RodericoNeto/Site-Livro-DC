@@ -6,7 +6,7 @@ class LivroController {
     static findAll = (req, res) => {
 
         livros.find((err, livros)=>{
-            console.log(livros)
+            //console.log(livros)
             res.status(200).json(livros)
         })
     }
@@ -21,6 +21,31 @@ class LivroController {
             }
         })
     }
+
+    static createBook = (req, res) =>{
+        let livro = new livros(req.body)
+        livro.save((err) => {
+            if(err){
+                // status HTTP é 500 pq algo não foi criado
+                res.status(500).send({message: 'Erro ao salvar o livro', error: err.message})
+            } else {
+                res.status(201).send(livro.toJSON())
+            }
+        })
+    }
+
+    static deleteBook = (req, res) => {
+        const id = req.params.id
+        livros.findByIdAndDelete(id, (err, livro)=>{
+            if(err){
+                res.status(404).send({message: 'Livro não encontrado e não deletado', error: err.message})
+            } else{
+                res.status(200).json(livro)
+            }
+        })
+    }
+
+
 }
 
 module.exports = LivroController;
