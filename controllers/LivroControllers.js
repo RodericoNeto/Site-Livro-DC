@@ -40,7 +40,18 @@ class LivroController {
             if(err){
                 res.status(404).send({message: 'Livro não encontrado e não deletado', error: err.message})
             } else{
-                res.status(200).json(livro)
+                res.status(200).send({message: 'O livro foi deletado!'});
+            }
+        })
+    }
+
+    static updateBook = (req, res) =>{
+        const id = req.params.id
+        livros.findByIdAndUpdate(id, {$set: req.body}, (err)=>{
+            if(err){
+                res.status(404).send({message: 'Não foi possível fazer update, recurso não encontrado', error: err.message})
+            } else {
+                res.status(200).send({message: "O livro foi atualizado!"})
             }
         })
     }

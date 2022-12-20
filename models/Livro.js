@@ -13,6 +13,6 @@ const livroSchema = new mongoose.Schema({
     numeroPaginas: {type: Number}
 });
 
-const livros = mongoose.model('livro', livroSchema);
+const livros = mongoose.model('agoravaicollection', livroSchema);
 
 module.exports = livros;
