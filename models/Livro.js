@@ -1,10 +1,8 @@
 //mongoose faz a intermediação entre o banco de dadoos e o servidor (node)
-
 const mongoose = require('mongoose');
 
 
 // embaixo seria o modelo(schema) dos dados(entidade) que tem que vir lá do mongodb
-
 const livroSchema = new mongoose.Schema({
     id: {type: String},
     title: {type: String, require: true},

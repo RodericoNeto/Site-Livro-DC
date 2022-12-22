@@ -55,8 +55,6 @@ class LivroController {
             }
         })
     }
-
-
 }
 
 module.exports = LivroController;
