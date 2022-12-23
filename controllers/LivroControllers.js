@@ -4,9 +4,10 @@ class LivroController {
 
     //o static permite que não precise instanciar a classe, pode usar direto tendo importado a classe. static é uma forma de declarar variável.
     static findAll = (req, res) => {
-
-        livros.find((err, livros)=>{
-            //console.log(livros)
+        livros.find()
+        .populate('autores')
+        .exec((err, livros)=>{
+            console.log(livros)
             res.status(200).json(livros)
         })
     }
